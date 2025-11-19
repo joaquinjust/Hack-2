@@ -268,7 +268,7 @@ Tu README debe incluir:
 - Este proyecto es exclusivamente para plataforma web
 - Deberán usar **React** con **TypeScript** obligatoriamente
 - **Tailwind CSS** es requerido para los estilos
-- No se permite el uso de librerías de componentes completas (Material-UI, Ant Design, etc.) - deben construir sus propios componentes
+- SI se permite el uso de librerías de componentes completas (Material-UI, Ant Design, etc.) - 
 - La API está preconfigurada y lista para usar como "caja negra"
 - El tiempo máximo es de **2 horas**
 - Trabajarán en equipos de **4-5 estudiantes**
@@ -290,3 +290,171 @@ Para dudas o soporte durante la hackathon, utilicen el canal oficial de Discord.
 
 **Con cariño,**
 **El equipo de CS2031** ❤️
+
+---
+
+## 🚀 Instalación y Uso
+
+### Requisitos Previos
+
+- Node.js 18+ y npm (o yarn/pnpm)
+- Git
+
+### Instalación
+
+1. Clona el repositorio o navega al directorio del proyecto:
+```bash
+cd cs2031-2025-2-hackathon-2
+```
+
+2. Instala las dependencias:
+```bash
+npm install
+```
+
+3. Configura las variables de entorno:
+```bash
+# Copia el archivo de ejemplo
+cp env.example .env
+```
+
+### 🔐 Variables de Entorno (.env)
+
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
+
+```env
+VITE_API_BASE_URL=https://cs2031-2025-2-hackathon-2-backend-production.up.railway.app/v1
+```
+
+**Variables disponibles:**
+- `VITE_API_BASE_URL` - URL base de la API del backend (requerido)
+
+**Nota:** El archivo `.env` no se sube a git por seguridad. Usa `env.example` como referencia.
+
+### Ejecutar la Aplicación
+
+Para iniciar el servidor de desarrollo:
+```bash
+npm run dev
+```
+
+La aplicación estará disponible en `http://localhost:5173` (o el puerto que Vite asigne).
+
+### Build para Producción
+
+Para crear una build optimizada:
+```bash
+npm run build
+```
+
+Para previsualizar la build:
+```bash
+npm run preview
+```
+
+## 🛠️ Tecnologías Utilizadas
+
+- **React 18** - Biblioteca de UI
+- **TypeScript** - Tipado estático
+- **Vite** - Build tool y dev server
+- **React Router** - Navegación
+- **Tailwind CSS** - Estilos
+- **Axios** - Cliente HTTP
+- **Lucide React** - Iconos
+
+## ✨ Features Implementadas
+
+### ✅ Autenticación
+- Login y registro de usuarios
+- Gestión de tokens JWT
+- Rutas protegidas
+- Perfil de usuario
+
+### ✅ Dashboard
+- Estadísticas en tiempo real (total, completadas, pendientes, vencidas)
+- Vista de tareas y proyectos recientes
+- Acciones rápidas
+
+### ✅ Gestión de Proyectos
+- Listado con paginación
+- Crear, editar y eliminar proyectos
+- Vista detallada de proyecto con tareas asociadas
+- Búsqueda de proyectos
+- Estados: Activo, Completado, En Pausa
+
+### ✅ Gestión de Tareas
+- Listado con paginación
+- Filtros avanzados:
+  - Por estado (TODO, IN_PROGRESS, COMPLETED)
+  - Por prioridad (LOW, MEDIUM, HIGH, URGENT)
+  - Por proyecto
+  - Por usuario asignado
+- Crear, editar y eliminar tareas
+- Cambio rápido de estado
+- Asignación a miembros del equipo
+- Fechas límite
+
+### ✅ Colaboración en Equipo
+- Vista de miembros del equipo
+- Tareas asignadas por miembro
+- Interfaz intuitiva para gestión de equipo
+
+## 🎨 Características de Diseño
+
+- Diseño moderno y responsivo
+- Interfaz intuitiva con Tailwind CSS
+- Animaciones y transiciones suaves
+- Modo claro (preparado para modo oscuro)
+- Componentes reutilizables
+- Manejo de estados de carga y errores
+
+## 📝 Credenciales de Prueba
+
+Puedes crear una cuenta nueva desde la pantalla de registro, o usar credenciales existentes si las tienes.
+
+## 🔗 Deploy
+
+El proyecto está listo para ser desplegado en plataformas como:
+- **Vercel** (recomendado para React)
+- **Netlify**
+- **Railway**
+- Cualquier plataforma que soporte aplicaciones React estáticas
+
+### Deploy en Vercel
+
+1. Conecta tu repositorio de GitHub a Vercel
+2. Vercel detectará automáticamente que es un proyecto Vite
+3. El build se ejecutará automáticamente
+4. ¡Listo! Tu app estará en línea
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── components/
+│   ├── common/          # Componentes reutilizables (Button, Input, Modal, Card)
+│   ├── auth/            # Formularios de autenticación
+│   └── layout/          # Navbar, ProtectedRoute
+├── pages/               # Páginas principales (Dashboard, Projects, Tasks, Team)
+├── services/            # Servicios de API (auth, projects, tasks, team)
+├── context/             # Contexto de autenticación
+├── types/               # Tipos TypeScript
+└── utils/               # Constantes y utilidades
+```
+
+## 🐛 Solución de Problemas
+
+Si encuentras problemas:
+
+1. Asegúrate de tener Node.js 18+ instalado
+2. Elimina `node_modules` y `package-lock.json` y vuelve a instalar:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+3. Verifica que la API esté disponible en la URL configurada
+4. Revisa la consola del navegador para errores
+
+## 📄 Licencia
+
+Este proyecto fue desarrollado para la Hackathon #2 de CS2031.
